@@ -5,7 +5,7 @@ import math
 
 def draw_partition(partition, filename):
     window = turtle.Screen()
-    window.setup(800, 800)
+    window.setup(500, 500)
     window.clearscreen()  # Clear the screen
     window.bgcolor(0,0,0)
 
