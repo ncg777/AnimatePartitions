@@ -25,19 +25,21 @@ def draw_partition(partition, filename):
     angle_step = 360 / num_points
 
     colors = [
-        (1, 0, 0),  # Red
-        (0, 1, 0),  # Green
-        (0, 0, 1),  # Blue
-        (1, 1, 0),  # Yellow
-        (1, 0, 1),  # Magenta
-        (0, 1, 1),  # Cyan
-        (0.5, 0, 0),  # Dark Red
-        (0, 0.5, 0),  # Dark Green
-        (0, 0, 0.5),  # Dark Blue
-        (0.5, 0.5, 0),  # Brown
-        (0.5, 0, 0.5),  # Purple
-        (0, 0.5, 0.5),  # Teal
+        (0.9, 0.7, 0.8),  # Pastel pink
+        (0.7, 0.9, 0.7),  # Pastel green
+        (0.7, 0.7, 0.9),  # Pastel blue
+        (0.9, 0.9, 0.7),  # Pastel yellow
+        (0.9, 0.7, 0.9),  # Pastel magenta
+        (0.7, 0.9, 0.9),  # Pastel cyan
+        (0.8, 0.7, 0.7),  # Pastel red
+        (0.7, 0.8, 0.7),  # Pastel green
+        (0.7, 0.7, 0.8),  # Pastel blue
+        (0.8, 0.8, 0.7),  # Pastel yellow
+        (0.8, 0.7, 0.8),  # Pastel magenta
+        (0.7, 0.8, 0.8),  # Pastel cyan
     ]
+    #inverted_colors = list(map(lambda x: (1-x[0], 1-x[1], 1-x[2]), colors))
+    
     k = max(partition)+1
 
     blocks = []
@@ -131,8 +133,10 @@ if __name__ == '__main__':
     partitions = [
         [[2,1,1,0,1,2,2,3],[3,1,1,0,1,2,2,3],[3,1,1,0,1,3,2,3],[3,1,0,0,1,3,2,3],[1,1,0,0,1,3,2,3],[1,1,1,0,1,3,2,3],[1,1,1,0,1,2,2,3]],
         [[0,0,1,2,2,3,3,4],[0,0,1,3,2,3,3,4],[0,0,1,3,2,2,3,4],[0,0,1,2,2,2,3,4]],
-        [[3,0,0,1,3,2,2,3],[3,1,0,1,3,2,2,3],[3,3,0,1,3,2,2,3],[3,3,0,1,3,3,2,3],[3,1,0,1,3,3,2,3],[3,0,0,1,3,3,2,3]]
+        [[3,0,0,1,3,2,2,3],[3,1,0,1,3,2,2,3],[3,3,0,1,3,2,2,3],[3,3,0,1,3,3,2,3],[3,1,0,1,3,3,2,3],[3,0,0,1,3,3,2,3]],
+        [[1,0,1,1,2,2,3],[2,0,1,1,2,2,3],[2,0,0,1,2,2,3],[3,0,0,1,2,2,3],[3,0,0,1,3,2,3],[3,0,1,1,3,2,3],[1,0,1,1,3,2,3]],
+        [[2,0,0,1,1,2],[2,1,0,1,1,2],[2,2,0,1,1,2],[2,2,0,2,1,2],[2,0,0,2,1,2]],
+        [[2,0,1,1,2],[2,0,2,1,2],[0,0,2,1,2],[0,0,1,1,2],[1,0,1,1,2]]
     ]
-    save_animation(partitions[0], "animation1.gif")
-    save_animation(partitions[1], "animation2.gif")
-    save_animation(partitions[2], "animation3.gif")
+    for i,partition in enumerate(partitions):
+        save_animation(partition, f"animation_{i}.gif")
