@@ -1,6 +1,7 @@
 import turtle
 import imageio
 import os
+import math
 
 def draw_partition(partition, filename):
     window = turtle.Screen()
@@ -125,7 +126,7 @@ def save_animation(partitions, filename):
         if os.path.exists(file):
             os.remove(file)
 
-import math        
-# Example usage:
-partitions = [[2,1,1,0,1,2,2,3],[3,1,1,0,1,2,2,3],[3,1,1,0,1,3,2,3],[3,1,0,0,1,3,2,3],[1,1,0,0,1,3,2,3],[1,1,1,0,1,3,2,3],[1,1,1,0,1,2,2,3]]
-save_animation(partitions, "animation.gif")
+
+if __name__ == "main"
+    partitions = [[2,1,1,0,1,2,2,3],[3,1,1,0,1,2,2,3],[3,1,1,0,1,3,2,3],[3,1,0,0,1,3,2,3],[1,1,0,0,1,3,2,3],[1,1,1,0,1,3,2,3],[1,1,1,0,1,2,2,3]]
+    save_animation(partitions, "animation.gif")
