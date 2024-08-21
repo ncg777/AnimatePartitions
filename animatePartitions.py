@@ -25,18 +25,18 @@ def draw_partition(partition, filename):
     angle_step = 360 / num_points
 
     colors = [
-        (0.9, 0.7, 0.8),  # Pastel pink
-        (0.7, 0.9, 0.7),  # Pastel green
-        (0.7, 0.7, 0.9),  # Pastel blue
-        (0.9, 0.9, 0.7),  # Pastel yellow
-        (0.9, 0.7, 0.9),  # Pastel magenta
-        (0.7, 0.9, 0.9),  # Pastel cyan
-        (0.8, 0.7, 0.7),  # Pastel red
-        (0.7, 0.8, 0.7),  # Pastel green
-        (0.7, 0.7, 0.8),  # Pastel blue
-        (0.8, 0.8, 0.7),  # Pastel yellow
-        (0.8, 0.7, 0.8),  # Pastel magenta
-        (0.7, 0.8, 0.8),  # Pastel cyan
+        (0.7, 0.5, 0.6),  # Darker pastel pink
+        (0.5, 0.7, 0.5),  # Darker pastel green
+        (0.5, 0.5, 0.7),  # Darker pastel blue
+        (0.7, 0.7, 0.5),  # Darker pastel yellow
+        (0.7, 0.5, 0.7),  # Darker pastel magenta
+        (0.5, 0.7, 0.7),  # Darker pastel cyan
+        (0.6, 0.5, 0.5),  # Darker pastel red
+        (0.5, 0.6, 0.5),  # Darker pastel green
+        (0.5, 0.5, 0.6),  # Darker pastel blue
+        (0.6, 0.6, 0.5),  # Darker pastel yellow
+        (0.6, 0.5, 0.6),  # Darker pastel magenta
+        (0.5, 0.6, 0.6),  # Darker pastel cyan
     ]
     #inverted_colors = list(map(lambda x: (1-x[0], 1-x[1], 1-x[2]), colors))
     
@@ -115,7 +115,7 @@ def animate_partitions(partitions):
 
 def save_animation(partitions, filename):
     images = animate_partitions(partitions)
-    imageio.mimsave(filename, images, duration=0.04, loop=0)
+    imageio.mimsave(filename, images, fps=1, loop=0)
     # Clean up image files
     for i in range(len(partitions)):
         file = f"image_{i}.png"
